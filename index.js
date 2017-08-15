@@ -27,7 +27,7 @@ function getRepositories() {
 function getCommits(el) {
 	const repo = el.dataset.repository
 	const userName = el.dataset.username/**/
-	const link = `https://api.g
+	const link = `https://api.github.com/repos/${userName}/${repo}/commits`
 	const req = new XMLHttpRequest()
 	req.addEventListener("load", displayCommits)
 	req.open("GET", `${link}`)
@@ -59,5 +59,5 @@ function getBranches(el){
 }
 
 function setToken(req){
-	req.setRequestHeader("Authorization", "token 13f2f340cb8586021122c9eec042e03fba2bf638")
+	// req.setRequestHeader("Authorization", "token token-code-goes-here")
 }
